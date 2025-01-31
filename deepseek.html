@@ -14,18 +14,27 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* 图片之间的间隔 */
             padding: 20px;
+            align-items: center;
         }
 
         .image-item {
-            overflow: hidden;
+            position: relative;
+            border: 5px solid #ff7f50; /* 花边的颜色 */
             border-radius: 10px;
+            overflow: hidden;
+            padding: 5px;
+            background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
@@ -45,21 +54,30 @@
         img:hover {
             transform: scale(1.1);
         }
+
+        /* 可选：为每张图片加上不同的边框样式 */
+        .image-item:nth-child(odd) {
+            border-color: #ff6347;
+        }
+
+        .image-item:nth-child(even) {
+            border-color: #4682b4;
+        }
     </style>
 </head>
 <body>
     <div class="gallery">
         <div class="image-item">
-            <img src="时间序列.png" alt="图片1">
+            <img src="image1.jpg" alt="图片1">
         </div>
         <div class="image-item">
-            <img src="积极词云.png" alt="图片2">
+            <img src="image2.jpg" alt="图片2">
         </div>
         <div class="image-item">
-            <img src="消极词云.png" alt="图片3">
+            <img src="image3.jpg" alt="图片3">
         </div>
         <div class="image-item">
-            <img src="语义网络.png" alt="图片4">
+            <img src="image4.jpg" alt="图片4">
         </div>
     </div>
 </body>
